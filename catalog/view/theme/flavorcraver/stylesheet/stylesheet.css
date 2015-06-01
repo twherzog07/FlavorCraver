@@ -524,6 +524,9 @@ footer h5 {
 	margin-bottom: 20px;
 	overflow: auto;
 }
+.product-list .product-thumb {
+	border: 1px solid #ddd;
+}
 .product-thumb .image {
 	text-align: center;
 }
