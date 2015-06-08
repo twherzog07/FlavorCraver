@@ -598,6 +598,10 @@ h2.price {
 }
 .product-thumb .price {
 	color: #444;
+	text-align: center;
+	font-weight: bold;
+	font-size: large;
+	padding-top: 10px;
 }
 .product-thumb .price-new {
 	font-weight: 600;
