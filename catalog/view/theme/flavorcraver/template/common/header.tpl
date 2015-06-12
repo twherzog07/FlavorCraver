@@ -112,7 +112,7 @@
         <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
         <?php } ?>
         <?php } ?>
-		<li><a href="<?php echo $latest; ?>"><?php echo $text_latest ?></a></li>
+		<!-- <li><a href="<?php echo $latest; ?>"><?php echo $text_latest ?></a></li> -->
 	  </ul>
     </div>
   </nav>
