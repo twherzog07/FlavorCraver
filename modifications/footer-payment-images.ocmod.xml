@@ -78,10 +78,10 @@
 			  .payment-methods img {padding-right:5px;}
 			</style>
 			<div class="row">
-			  <div class="col-xs-6">
+			  <div class="col-sm-6">
 			    <p><?php echo $powered; ?></p>
 			  </div>
-			  <div class="payment-methods col-xs-6 text-right">
+			  <div class="payment-methods col-sm-6 text-right">
 							    <img src="<?php echo $paypal_image; ?>" alt="<?php echo $text_paypal; ?>">
 			    <img src="<?php echo $visa_image; ?>" alt="<?php echo $text_visa; ?>">
 			    <img src="<?php echo $mastercard_image; ?>" alt="<?php echo $text_mastercard; ?>">
