@@ -1022,9 +1022,11 @@ class ControllerSaleCustomer extends Controller {
 			}
 		}
 
+		/* Removed telephone number requirement
 		if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
 			$this->error['telephone'] = $this->language->get('error_telephone');
 		}
+		*/
 
 		// Custom field validation
 		$this->load->model('sale/custom_field');
