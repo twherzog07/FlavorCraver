@@ -32,7 +32,7 @@
         <label class="control-label" for="input-payment-email"><?php echo $entry_email; ?></label>
         <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-payment-email" class="form-control" />
       </div>
-      <div class="form-group required">
+      <div class="form-group">
         <label class="control-label" for="input-payment-telephone"><?php echo $entry_telephone; ?></label>
         <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-payment-telephone" class="form-control" />
       </div>
