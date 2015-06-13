@@ -40,6 +40,65 @@
 <?php echo $google_analytics; ?>
 </head>
 <body class="<?php echo $class; ?>">
+
+<!-- Age Verification Modal -->
+<script type="text/javascript">
+	$(window).load(function(){
+		if ($.cookie("age-verified") == null) {
+			//Center modal
+			(function ($) {
+				"use strict";
+				function centerModal() {
+					$(this).css('display', 'block');
+					var $dialog  = $(this).find(".modal-dialog"),
+					offset       = ($(window).height() - $dialog.height()) / 2,
+					bottomMargin = parseInt($dialog.css('marginBottom'), 10);
+
+					// Make sure you don't hide the top part of the modal w/ a negative margin if it's longer than the screen height, and keep the margin equal to the bottom margin of the modal
+					if(offset < bottomMargin) offset = bottomMargin;
+					$dialog.css("margin-top", offset);
+				}
+
+				$('.modal').on('show.bs.modal', centerModal);
+				$(window).on("resize", function () {
+					$('.modal:visible').each(centerModal);
+				});
+			})(jQuery);
+			
+			$('#age-verification-modal').modal({
+				backdrop: 'static',
+				keyboard: false,
+				show: true
+			});
+		}
+		
+		$(".verify").click(function() {
+			$.cookie('age-verified', 'true', { expires: 30, path: '/' });
+		});
+	});
+	
+
+</script>
+<div class="modal fade in" id="age-verification-modal" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	  <div class="modal-header">
+	    <h3 class="modal-title" id="modalLabel">Flavor Craver E-Liquid</h3>
+	  </div>
+	  <div class="modal-body">
+	    <h4 class="lead" id="age-verification-title"><strong>Age Verification</strong></h4>
+	    <h4>The e-liquid and electronic cigarette products on Flavor Craver's website are intended for users over the age of 18 years old.
+		Please verify that you are over the age of 18 in order to enter the website.</h4>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="http://google.com" target="_self" type="button" class="btn btn-danger btn-lg">Under 18</a>
+		<button type="button" class="btn btn-success btn-lg verify" data-dismiss="modal">18 or Older</button>
+	  </div>
+	</div>
+  </div>
+</div>
+<!-- End Age Verification Modal -->
+
 <nav id="top">
   <div class="container">
     <?php echo $currency; ?>
