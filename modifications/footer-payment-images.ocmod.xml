@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modification>
 	<name>Payment Method Footer Images</name>
-	<version>1.4</version>
+	<version>1.5</version>
 	<author>Travis Herzog</author>
 	<code>wh1t3y</code>
 	<link>http://www.flavorcraverejuice.com</link>
@@ -10,7 +10,7 @@
 			<search><![CDATA[
 			$_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';
 			]]></search>
-			<add position="after" offset="1"><![CDATA[
+			<add position="after"><![CDATA[
 			$_['text_paypal']       = 'PayPal';
 			$_['text_visa']         = 'Visa';
 			$_['text_mastercard']   = 'Mastercard';
@@ -74,21 +74,22 @@
 			<p><?php echo $powered; ?></p>
 			]]></search>
 			<add position="replace"><![CDATA[
-			<style>
-			  .payment-methods img {padding-right:5px;}
-			</style>
-			<div class="row">
-			  <div class="col-sm-6">
-			    <p><?php echo $powered; ?></p>
-			  </div>
-			  <div class="payment-methods col-sm-6 text-right">
-							    <img src="<?php echo $paypal_image; ?>" alt="<?php echo $text_paypal; ?>">
-			    <img src="<?php echo $visa_image; ?>" alt="<?php echo $text_visa; ?>">
-			    <img src="<?php echo $mastercard_image; ?>" alt="<?php echo $text_mastercard; ?>">
-			    <img src="<?php echo $amex_image; ?>" alt="<?php echo $text_amex; ?>">
-			    <img src="<?php echo $discover_image; ?>" alt="<?php echo $text_discover; ?>">
-			  </div>
-			</div>]]></add>
+<style>
+  .payment-methods img {padding-right:5px;}
+</style>
+<div class="row">
+  <div class="col-sm-6">
+	<p><?php echo $powered; ?></p>
+  </div>
+  <div class="payment-methods col-sm-6 text-right">
+					<img src="<?php echo $paypal_image; ?>" alt="<?php echo $text_paypal; ?>">
+	<img src="<?php echo $visa_image; ?>" alt="<?php echo $text_visa; ?>">
+	<img src="<?php echo $mastercard_image; ?>" alt="<?php echo $text_mastercard; ?>">
+	<img src="<?php echo $amex_image; ?>" alt="<?php echo $text_amex; ?>">
+	<img src="<?php echo $discover_image; ?>" alt="<?php echo $text_discover; ?>">
+  </div>
+</div>
+			]]></add>
 		</operation>
 	</file>
 </modification>
