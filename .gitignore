@@ -1,6 +1,7 @@
 .htaccess
 .htaccess.txt
 /config.php
+/backups
 admin/config.php
 
 !index.html
