@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modification>
 	<name>Multi-Price Products Prefix</name>
-	<version>2.0</version>
+	<version>1.7</version>
 	<author>Travis Herzog</author>
 	<code>pr1c3pr3f1x</code>
 	<file path="catalog/model/catalog/product.php">
@@ -22,25 +22,7 @@
 			]]></add>
 		</operation>
 	</file>
-	<file path="catalog/controller/product/product.php">
-		<operation>
-			<search index="1"><![CDATA[
-			if ($this->config->get('config_tax')) {
-			]]></search>
-			<add position="before"><![CDATA[
-				$higher_price = $result['higher_prices'] > 0;
-			]]></add>
-		</operation>
-		<operation>
-			<search><![CDATA[
-			'special'     => $special,
-			]]></search>
-			<add position="after"><![CDATA[
-					'higher_price' => $higher_price,
-			]]></add>
-		</operation>
-	</file>
-	<file path="catalog/controller/module/bestseller.php,catalog/controller/module/special.php,catalog/controller/product/category.php,catalog/controller/product/manufacturer.php,catalog/controller/product/search.php,catalog/controller/product/special.php">
+	<file path="catalog/controller/product/category.php">
 		<operation>
 			<search><![CDATA[
 			if ($this->config->get('config_tax')) {
@@ -55,6 +37,18 @@
 			]]></search>
 			<add position="after"><![CDATA[
 				'higher_price' => $higher_price,
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/view/theme/*/template/product/category.tpl">
+		<operation>
+			<search><![CDATA[
+			<p class="price">
+			]]></search>
+			<add position="after"><![CDATA[
+			  <?php if ($product['higher_price']) { ?>
+		        <span class="starting-price">Starting at </span>
+			  <?php } ?>
 			]]></add>
 		</operation>
 	</file>
@@ -76,7 +70,7 @@
 			]]></add>
 		</operation>
 	</file>
-	<file path="catalog/view/theme/*/template/module/bestseller.tpl,catalog/view/theme/*/template/module/featured.tpl,catalog/view/theme/*/template/module/special.tpl,catalog/view/theme/*/template/product/category.tpl,catalog/view/theme/*/template/product/manufacturer_info.tpl,catalog/view/theme/*/template/product/product.tpl,catalog/view/theme/*/template/product/search.tpl,catalog/view/theme/*/template/product/special.tpl">
+	<file path="catalog/view/theme/*/template/module/featured.tpl">
 		<operation>
 			<search><![CDATA[
 			<p class="price">
