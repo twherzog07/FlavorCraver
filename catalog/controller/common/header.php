@@ -69,6 +69,8 @@ class ControllerCommonHeader extends Controller {
 		$data['text_checkout'] = $this->language->get('text_checkout');
 		$data['text_category'] = $this->language->get('text_category');
 		$data['text_all'] = $this->language->get('text_all');
+		// Added Free Shipping text
+		$data['text_free_shipping'] = $this->language->get('text_free_shipping');
 
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);

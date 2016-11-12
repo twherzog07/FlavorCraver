@@ -305,6 +305,9 @@ div.required .control-label:before {
 		color: #fff;
 	}
 }
+#free-shipping {
+	text-align: center;
+}
 /* content */
 #content {
 	min-height: 600px;

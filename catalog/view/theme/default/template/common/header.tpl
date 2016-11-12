@@ -81,6 +81,9 @@
       <div class="col-sm-5"><?php echo $search; ?>
       </div>
       <div class="col-sm-3"><?php echo $cart; ?></div>
+	  <div class="col-sm-8 hidden-xs">
+			<h3 id="free-shipping"><?php echo $text_free_shipping; ?></h3>
+		</div>
     </div>
   </div>
 </header>
